@@ -22,12 +22,11 @@ client = dropbox.client.DropboxClient('KEY')
 # out.write(f.read())
 # out.close()
 # print metadata
-save = ''
 for root, dirs, files in os.walk("/home/pi/RetroPie/roms"):
     for name in files:
         if name.endswith((".state", ".htm")):
 		f = open(name, 'rb')
-		save = client.put_file('/' + str(files), f)
+		client.put_file(files, f)
 		print 'uploaded: ', name
             print name
 			
