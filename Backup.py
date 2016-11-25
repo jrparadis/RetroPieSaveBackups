@@ -27,7 +27,7 @@ for root, dirs, files in os.walk("/home/pi/RetroPie/roms"):
     for name in files:
         if name.endswith((".state", ".htm")):
 		f = open(name, 'rb')
-		save = client.put_file('/' + str(name), f)
+		save = client.put_file('/' + str(files), f)
 		print 'uploaded: ', name
             print name
 			
